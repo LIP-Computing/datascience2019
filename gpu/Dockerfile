@@ -1,4 +1,5 @@
 FROM datmo/keras-tensorflow:py35-gpu
+LABEL maintainer="Samuel Bernardo <samuelbernardo.mail@gmail.com>"
 
 WORKDIR /root/
 RUN apt-get update && \
@@ -20,3 +21,5 @@ RUN apt-get update && \
       libssl-dev \
       gfortran && \
     pip install --user gwpy
+
+CMD ["/home/run_jupyter.sh", "--allow-root"]
