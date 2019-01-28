@@ -1,0 +1,15 @@
+title: Data Science 2019
+description: > # this means to ignore newlines until "show_downloads:"
+  Data Science symposium guide.
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-hacker
+#logo:
+url: https://lip-computing.github.io
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+exclude:
+- .gitignore
+- .jekyll-cache
+- README.md
