@@ -1,4 +1,4 @@
-FROM datmo/keras-tensorflow:py35-gpu
+FROM datmo/keras-tensorflow:gpu-py35-notebook
 LABEL maintainer="Samuel Bernardo <samuelbernardo.mail@gmail.com>"
 
 WORKDIR /root/
