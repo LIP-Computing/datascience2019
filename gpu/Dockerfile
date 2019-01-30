@@ -14,12 +14,14 @@ RUN apt-get update && \
       python-matplotlib \
       python-h5py \
       python-astropy \
-      python-glue \
+      glue-sprite \
       python-six \
       libblas-dev \
       liblapack-dev \
       libssl-dev \
       gfortran && \
+    pip --no-cache-dir install glue && \
+    pip --no-cache-dir install -U scikit-learn && \
     pip install --user gwpy
 
 CMD ["/home/run_jupyter.sh", "--allow-root"]
