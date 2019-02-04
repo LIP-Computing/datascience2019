@@ -24,6 +24,6 @@ To download this docker images from [official Docker Hub project page](https://h
 docker pull lipcomputing/data_science_school_2019:<tag>
 ```
 
-where <tag> is one of the mentioned tags in above table.
+where \<tag\> is one of the mentioned tags in above table.
 
 [back](./)
