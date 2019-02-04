@@ -3,8 +3,8 @@ LABEL maintainer="Samuel Bernardo <samuelbernardo.mail@gmail.com>"
 
 WORKDIR /root/
 # Hack: solve wrong tensorflow-gpu module installed from base image
-RUN pip uninstall tensorflow-gpu && \
-    pip install tensorflow
+RUN pip --no-cache-dir uninstall -y tensorflow-gpu && \
+    pip --no-cache-dir install tensorflow
 # Install addittional features
 RUN apt-get update && \
     apt-get --assume-yes install \
