@@ -1,10 +1,10 @@
 title: Data Science 2019
-logo: /assets/img/LIP-black-1000x677.png
 description: > # this means to ignore newlines until "show_downloads:"
   Data Science symposium guide.
 show_downloads: false
 google_analytics:
-theme: jekyll-theme-minimal
+theme: jekyll-theme-hacker
+#logo:
 url: https://lip-computing.github.io
 plugins:
   - jekyll-sitemap
