@@ -26,8 +26,8 @@ RUN apt-get update && \
     pip install --user gwpy
 # Add python 3.6
 RUN apt-get update && \
-    apt-get install software-properties-common && \
-    add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get --assume-yes install software-properties-common && \
+    add-apt-repository -y ppa:deadsnakes/ppa && \
     apt-get update && \
     apt-get --assume-yes install python3.6
 
