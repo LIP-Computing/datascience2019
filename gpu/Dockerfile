@@ -2,6 +2,7 @@ FROM datmo/keras-tensorflow:gpu-py35-notebook
 LABEL maintainer="Samuel Bernardo <samuelbernardo.mail@gmail.com>"
 
 WORKDIR /root/
+# Install addittional features
 RUN apt-get update && \
     apt-get --assume-yes install \
       wget \
@@ -24,4 +25,4 @@ RUN apt-get update && \
     pip --no-cache-dir install -U scikit-learn && \
     pip install --user gwpy
 
-CMD ["/home/run_jupyter.sh", "--allow-root"]
+CMD ["/run_jupyter.sh", "--allow-root"]
