@@ -3,7 +3,9 @@ LABEL maintainer="Samuel Bernardo <samuelbernardo.mail@gmail.com>"
 
 WORKDIR /root/
 # Add python 3.6
-RUN add-apt-repository ppa:deadsnakes/ppa && \
+RUN apt-get update && \
+    apt-get install software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && \
     apt-get --assume-yes install python3.6
 # Hack: solve wrong tensorflow-gpu module installed from base image
