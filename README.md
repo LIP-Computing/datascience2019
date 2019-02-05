@@ -6,4 +6,6 @@ Event will take place in 25, 26 and 27 March 2019.
 
 ## Documentation
 
-Docker files and their usage in github pages [site](https://lip-computing.github.io/datascience2019/)
+Review docker files details and their usage in github pages [site](https://lip-computing.github.io/datascience2019/).
+
+Github pages is using Hacker Jekyll theme for github pages. For more details review [Hacker readme](https://github.com/pages-themes/hacker/blob/master/README.md).
