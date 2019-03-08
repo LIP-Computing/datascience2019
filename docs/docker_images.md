@@ -37,5 +37,9 @@ Datmo also provides docker images with already preconfigured datmo workspaces an
 
 This datmo images are used in each cpu/gpu image with python 3.5 and 3.6. Images with python 3.6 have all software installed for python 3.5. So to run with python 3.6 you need to run python36 and define [PYTHONPATH](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH) appending python 3.5 path, so all installed modules be available.
 
+For more details about Datmo image features review their [README](https://github.com/datmo/datmo/blob/master/README.md).
+
+The guide to setup the necessary environment is available on Datmo [DOCS](https://datmo.readthedocs.io/en/latest/env-setup.html).
+
 
 [back](./)
