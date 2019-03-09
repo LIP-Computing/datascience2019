@@ -5,7 +5,7 @@ layout: default
 
 # Use docker with available images
 
-First pull desired images from docker hub as explaned in [Docker Images page](./docker_images.html).
+First pull desired images from docker hub as explained in [Docker Images page](./docker_images.html).
 
 To start docker image with Jupiter notebook:
 
