@@ -41,5 +41,6 @@ For more details about Datmo image features review their [README](https://github
 
 The guide to setup the necessary environment is available on Datmo [DOCS](https://datmo.readthedocs.io/en/latest/env-setup.html).
 
+For additional parameters and configurations to Jupyter notebook just check the available [documentation](https://jupyter-notebook.readthedocs.io/en/stable/config.html).
 
 [back](./)

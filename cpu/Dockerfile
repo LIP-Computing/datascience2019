@@ -28,4 +28,4 @@ RUN apt-get update && \
     pip --no-cache-dir install -U scikit-learn && \
     pip install --user gwpy
 
-CMD ["/run_jupyter.sh", "--allow-root"]
+CMD ["/run_jupyter.sh", "--allow-root", "--notebook-dir=/notebooks"]

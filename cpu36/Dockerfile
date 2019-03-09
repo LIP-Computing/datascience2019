@@ -34,4 +34,4 @@ RUN apt-get update && \
     apt-get update && \
     apt-get --assume-yes install python3.6
 
-CMD ["/run_jupyter.sh", "--allow-root"]
+CMD ["/run_jupyter.sh", "--allow-root", "--notebook-dir=/notebooks"]
