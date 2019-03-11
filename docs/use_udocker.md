@@ -30,7 +30,7 @@ Pull desired images from docker hub, selecting one of the tags available in [Doc
 To start docker image with Jupiter notebook:
 
 ```
-udocker run -it -p 8888:8888 -v /path_to_data:/data -v /path_to_notebooks:/notebooks lipcomputing/data_science_school_2019:<tag>
+./udocker run -it -p 8888:8888 -v /path_to_data:/data -v /path_to_notebooks:/notebooks lipcomputing/data_science_school_2019:<tag>
 ```
 
 \<tag\> is one of the mentioned in [Docker Images page](./docker_images.html).
