@@ -27,10 +27,16 @@ Pull desired images from docker hub, selecting one of the tags available in [Doc
 ./udocker pull lipcomputing/data_science_school_2019:<tag>
 ```
 
-To start docker image with Jupiter notebook:
-
+Extract image to use with uDocker:
 ```
-./udocker run -it -p 8888:8888 -v /path_to_data:/data -v /path_to_notebooks:/notebooks lipcomputing/data_science_school_2019:<tag>
+./udocker create --name=<name> lipcomputing/data_science_school_2019:<tag>
+```
+
+where name is the desired name you want for the container created from the selected image.
+
+To start docker image with Jupiter notebook:
+```
+./udocker run -p 8888:8888 -v /path_to_data:/data -v /path_to_notebooks:/notebooks lipcomputing/data_science_school_2019:<tag>
 ```
 
 \<tag\> is one of the mentioned in [Docker Images page](./docker_images.html).
