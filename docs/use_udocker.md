@@ -24,7 +24,7 @@ export UDOCKER_DIR=${PROJECT_HOME}/.udocker
 
 Pull desired images from docker hub, selecting one of the tags available in [Docker Images page](./docker_images.html):
 ```
-./udocker pull lipcomputing/data_science_school_2019:\<tag\>
+./udocker pull lipcomputing/data_science_school_2019:<tag>
 ```
 
 To start docker image with Jupiter notebook:
