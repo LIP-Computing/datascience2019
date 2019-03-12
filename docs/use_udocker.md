@@ -32,7 +32,7 @@ Extract image to use with uDocker:
 ./udocker create --name=<name> lipcomputing/data_science_school_2019:<tag>
 ```
 
-where name is the desired name you want for the container created from the selected image.
+where \<name\> is the desired name you want for the container created from the selected image.
 
 To start docker image with Jupiter notebook:
 ```
