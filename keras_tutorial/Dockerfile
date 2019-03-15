@@ -51,4 +51,4 @@ RUN echo "c.InteractiveShellApp.exec_lines = ['%matplotlib inline']" >>${CONFIG_
 ENV KERAS_BACKEND tensorflow
 EXPOSE 8888
 
-CMD ["jupyter","notebook", "--allow-root", "--notebook-dir=/notebooks"]
+CMD ["jupyter","notebook", "--allow-root"]
