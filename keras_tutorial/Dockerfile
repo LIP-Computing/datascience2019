@@ -23,7 +23,7 @@ RUN pip --no-cache-dir install \
       glue \
       tensorflow==1.11.0 \
       keras==2.2.4 \
-      jupyter \
+      jupyter==5.4.1 \
       matplotlib==3.0.2 \
       numpy==1.15.2 \
       pandas==0.23.4 \
