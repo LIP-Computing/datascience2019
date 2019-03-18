@@ -38,12 +38,13 @@ RUN git clone https://github.com/parrt/random-forest-importances.git && \
     cd random-forest-importances/src && \
     pip install .
 
+
 # Set up Jupyter Notebook config
 ENV CONFIG /root/.jupyter/jupyter_notebook_config.py
 ENV CONFIG_IPYTHON /root/.ipython/profile_default/ipython_config.py 
 RUN jupyter notebook --generate-config --allow-root && \
     ipython profile create
-RUN echo "c.NotebookApp.ip = '127.0.0.1'" >>${CONFIG} && \
+RUN echo "c.NotebookApp.ip = '0.0.0.0'" >>${CONFIG} && \
     echo "c.NotebookApp.port = 8888" >>${CONFIG} && \
     echo "c.NotebookApp.open_browser = False" >>${CONFIG} && \
     echo "c.NotebookApp.iopub_data_rate_limit=10000000000" >>${CONFIG} && \
@@ -52,4 +53,4 @@ RUN echo "c.InteractiveShellApp.exec_lines = ['%matplotlib inline']" >>${CONFIG_
 ENV KERAS_BACKEND tensorflow
 EXPOSE 8888
 
-CMD ["jupyter","notebook", "--allow-root"]
+CMD ["jupyter","notebook", "--allow-root", "--notebook-dir=/notebooks"]
