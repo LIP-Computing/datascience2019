@@ -36,8 +36,7 @@ RUN pip --no-cache-dir install \
 #rfpimp
 RUN git clone https://github.com/parrt/random-forest-importances.git && \
     cd random-forest-importances/src && \
-    pip install .
-
+    pip install . 
 
 # Set up Jupyter Notebook config
 ENV CONFIG /root/.jupyter/jupyter_notebook_config.py
@@ -52,5 +51,11 @@ RUN echo "c.NotebookApp.ip = '0.0.0.0'" >>${CONFIG} && \
 RUN echo "c.InteractiveShellApp.exec_lines = ['%matplotlib inline']" >>${CONFIG_IPYTHON}
 ENV KERAS_BACKEND tensorflow
 EXPOSE 8888
+
+#tutorial
+RUN git clone https://github.com/GilesStrong/LIP_DSS_Keras_Tutorial_2019.git /notebooks && \
+    mkdir /notebooks/notebooks/data && \
+    wget -O /notebooks/notebooks/data/atlas-higgs-challenge-2014-v2.csv.gz http://opendata.cern.ch/record/328/files/atlas-higgs-challenge-2014-v2.csv.gz && \
+	gunzip /notebooks/notebooks/data/atlas-higgs-challenge-2014-v2.csv.gz
 
 CMD ["jupyter","notebook", "--allow-root", "--notebook-dir=/notebooks"]
