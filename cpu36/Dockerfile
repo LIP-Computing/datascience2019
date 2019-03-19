@@ -26,7 +26,8 @@ RUN apt-get update && \
       gfortran && \
     pip --no-cache-dir install glue && \
     pip --no-cache-dir install -U scikit-learn && \
-    pip install --user gwpy
+    pip install --user gwpy && \
+    mkdir -p /notebooks
 # Add python 3.6
 RUN apt-get update && \
     apt-get --assume-yes install software-properties-common && \

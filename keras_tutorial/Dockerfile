@@ -42,7 +42,8 @@ RUN git clone https://github.com/parrt/random-forest-importances.git && \
 # Set up Jupyter Notebook config
 ENV CONFIG /root/.jupyter/jupyter_notebook_config.py
 ENV CONFIG_IPYTHON /root/.ipython/profile_default/ipython_config.py 
-RUN jupyter notebook --generate-config --allow-root && \
+RUN mkdir -p /notebooks && \
+    jupyter notebook --generate-config --allow-root && \
     ipython profile create
 RUN echo "c.NotebookApp.ip = '0.0.0.0'" >>${CONFIG} && \
     echo "c.NotebookApp.port = 8888" >>${CONFIG} && \
