@@ -32,7 +32,7 @@ RUN apt-get update && \
     pip install --user gwpy && \
     mkdir -p /notebooks /data && \
     wget -O /data/2019_braga_school_O1_dataset.tar.gz https://owncloud.ego-gw.it/index.php/s/nHXFIJrCvAoDWob/download && \
-    gunzip /data/2019_braga_school_O1_dataset.tar.gz && \
+    tar xf /data/2019_braga_school_O1_dataset.tar.gz -C /data && \
     rm /data/2019_braga_school_O1_dataset.tar.gz
 
 CMD ["/run_jupyter.sh", "--allow-root", "--notebook-dir=/notebooks"]
