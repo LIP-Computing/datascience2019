@@ -23,10 +23,16 @@ RUN apt-get update && \
       libblas-dev \
       liblapack-dev \
       libssl-dev \
-      gfortran && \
+      gfortran \
+      git \
+      tar && \
+    apt-get clean && \
     pip --no-cache-dir install glue && \
     pip --no-cache-dir install -U scikit-learn && \
     pip install --user gwpy && \
-    mkdir -p /notebooks
+    mkdir -p /notebooks /data && \
+    wget -O /data/2019_braga_school_O1_dataset.tar.gz https://owncloud.ego-gw.it/index.php/s/nHXFIJrCvAoDWob/download && \
+    gunzip /data/2019_braga_school_O1_dataset.tar.gz && \
+    rm /data/2019_braga_school_O1_dataset.tar.gz
 
 CMD ["/run_jupyter.sh", "--allow-root", "--notebook-dir=/notebooks"]
