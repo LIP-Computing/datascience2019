@@ -45,9 +45,8 @@ Go to https://www.virtualbox.org/wiki/Downloads and use the download link for wi
 
 ## 3 - Install Virtualbox
 
-## 4 - Import image in Virtualbox
+## 4 - Install Docker in the virtual machine
 
-Import prepared Linux image, to be provided at the school.
-To see a tutorial: https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html
+Choose your favourite Linux distribution (if no particular favourite, choose Ubuntu). Once running Linux install Docker with the normal instructions provided at https://www.docker.com/.
 
 [back](./)
