@@ -33,6 +33,6 @@ RUN apt-get update && \
     mkdir -p /notebooks/data && \
     wget -O /notebooks/data/2019_braga_school_O1_dataset.tar.gz https://owncloud.ego-gw.it/index.php/s/nHXFIJrCvAoDWob/download && \
     tar xf /notebooks/data/2019_braga_school_O1_dataset.tar.gz -C /notebooks/data --strip-components=1 && \
-    rm /data/2019_braga_school_O1_dataset.tar.gz
+    rm /notebooks/data/2019_braga_school_O1_dataset.tar.gz
 
 CMD ["/run_jupyter.sh", "--allow-root", "--notebook-dir=/notebooks"]
