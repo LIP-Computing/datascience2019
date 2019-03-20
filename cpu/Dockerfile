@@ -30,9 +30,9 @@ RUN apt-get update && \
     pip --no-cache-dir install glue && \
     pip --no-cache-dir install -U scikit-learn && \
     pip install --user gwpy && \
-    mkdir -p /notebooks /data && \
-    wget -O /data/2019_braga_school_O1_dataset.tar.gz https://owncloud.ego-gw.it/index.php/s/nHXFIJrCvAoDWob/download && \
-    tar xf /data/2019_braga_school_O1_dataset.tar.gz -C /data && \
+    mkdir -p /notebooks/data && \
+    wget -O /notebooks/data/2019_braga_school_O1_dataset.tar.gz https://owncloud.ego-gw.it/index.php/s/nHXFIJrCvAoDWob/download && \
+    tar xf /notebooks/data/2019_braga_school_O1_dataset.tar.gz -C /notebooks/data --strip-components=1 && \
     rm /data/2019_braga_school_O1_dataset.tar.gz
 
 CMD ["/run_jupyter.sh", "--allow-root", "--notebook-dir=/notebooks"]
