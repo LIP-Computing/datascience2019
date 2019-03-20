@@ -25,7 +25,7 @@ docker pull lipcomputing/data_science_school_2019:<tag>
 
 where \<tag\> is one of the mentioned tags in above table.
 
-All notebooks and data sets are already available inside images in /notebooks and /data respectively, unless gpu-py35-jnote-gwpy that is only referenced here for those who want to test with Nvidia GPUs. For testing with GPUs you need to mount notebooks and data directories when starting docker container.
+All notebooks and data sets are already available inside images in /notebooks and /notebooks/data respectively, unless gpu-py35-jnote-gwpy that is only referenced here for those who want to test with Nvidia GPUs. For testing with GPUs you need to mount notebooks and data directories when starting docker container.
 
 
 ## References
