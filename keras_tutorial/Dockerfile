@@ -14,12 +14,10 @@ RUN apt-get update && \
       libssl-dev \
       gfortran \
       git \
-      tar
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-#PIP
-RUN pip --no-cache-dir install \
+      tar && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip --no-cache-dir install \
       glue \
       tensorflow==1.11.0 \
       keras==2.2.4 \
@@ -31,31 +29,23 @@ RUN pip --no-cache-dir install \
       seaborn==0.8.1 \
       scikit-learn==0.20.0 \
       tornado==5.1.1 && \
-    python -m ipykernel.kernelspec
-
-#rfpimp
-RUN git clone https://github.com/parrt/random-forest-importances.git && \
+    python -m ipykernel.kernelspec && \
+    git clone https://github.com/parrt/random-forest-importances.git && \
     cd random-forest-importances/src && \
-    pip install . 
-
-# Set up Jupyter Notebook config
-ENV CONFIG /root/.jupyter/jupyter_notebook_config.py
-ENV CONFIG_IPYTHON /root/.ipython/profile_default/ipython_config.py 
-RUN jupyter notebook --generate-config --allow-root && \
-    ipython profile create
-RUN echo "c.NotebookApp.ip = '0.0.0.0'" >>${CONFIG} && \
-    echo "c.NotebookApp.port = 8888" >>${CONFIG} && \
-    echo "c.NotebookApp.open_browser = False" >>${CONFIG} && \
-    echo "c.NotebookApp.iopub_data_rate_limit=10000000000" >>${CONFIG} && \
-    echo "c.MultiKernelManager.default_kernel_name = 'python3'" >>${CONFIG} 
-RUN echo "c.InteractiveShellApp.exec_lines = ['%matplotlib inline']" >>${CONFIG_IPYTHON}
-ENV KERAS_BACKEND tensorflow
-EXPOSE 8888
-
-#tutorial
-RUN git clone https://github.com/GilesStrong/LIP_DSS_Keras_Tutorial_2019.git /notebooks && \
+    pip install . && \
+    jupyter notebook --generate-config --allow-root && \
+    ipython profile create && \
+    echo "c.NotebookApp.ip = '0.0.0.0'" >>/root/.jupyter/jupyter_notebook_config.py && \
+    echo "c.NotebookApp.port = 8888" >>/root/.jupyter/jupyter_notebook_config.py && \
+    echo "c.NotebookApp.open_browser = False" >>/root/.jupyter/jupyter_notebook_config.py && \
+    echo "c.NotebookApp.iopub_data_rate_limit=10000000000" >>/root/.jupyter/jupyter_notebook_config.py && \
+    echo "c.MultiKernelManager.default_kernel_name = 'python3'" >>/root/.jupyter/jupyter_notebook_config.py && \
+    echo "c.InteractiveShellApp.exec_lines = ['%matplotlib inline']" >>/root/.ipython/profile_default/ipython_config.py && \
+    git clone https://github.com/GilesStrong/LIP_DSS_Keras_Tutorial_2019.git /notebooks && \
     mkdir /notebooks/notebooks/data && \
     wget -O /notebooks/notebooks/data/atlas-higgs-challenge-2014-v2.csv.gz http://opendata.cern.ch/record/328/files/atlas-higgs-challenge-2014-v2.csv.gz && \
-	gunzip /notebooks/notebooks/data/atlas-higgs-challenge-2014-v2.csv.gz
+    gunzip /notebooks/notebooks/data/atlas-higgs-challenge-2014-v2.csv.gz
+ENV KERAS_BACKEND tensorflow
+EXPOSE 8888
 
 CMD ["jupyter","notebook", "--allow-root", "--notebook-dir=/notebooks"]
