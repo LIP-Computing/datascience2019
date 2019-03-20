@@ -36,7 +36,7 @@ where \<name\> is the desired name you want for the container created from the s
 
 To start docker image with Jupiter notebook:
 ```
-./udocker run -p 8888:8888 -v /path_to_data:/data -v /path_to_notebooks:/notebooks <name>
+./udocker run -p 8888:8888 <name>
 ```
 
 For more details about available commands and their options review the [uDocker user manual](https://github.com/indigo-dc/udocker/blob/master/doc/user_manual.md).

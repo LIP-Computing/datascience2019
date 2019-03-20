@@ -25,6 +25,8 @@ docker pull lipcomputing/data_science_school_2019:<tag>
 
 where \<tag\> is one of the mentioned tags in above table.
 
+All notebooks and data sets are already available inside images in /notebooks and /data respectively.
+
 
 ## References
 

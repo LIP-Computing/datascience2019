@@ -10,7 +10,7 @@ First pull desired images from docker hub as explained in [Docker Images page](.
 To start docker image with Jupiter notebook:
 
 ```
-docker run -it -p 8888:8888 -v /path_to_data:/data -v /path_to_notebooks:/notebooks lipcomputing/data_science_school_2019:<tag>
+docker run -it -p 8888:8888 lipcomputing/data_science_school_2019:<tag>
 ```
 
 \<tag\> is one of the mentioned in [Docker Images page](./docker_images.html).
@@ -32,7 +32,7 @@ gzip < "<image name>.tar.gz" | docker load
 
 Then to start docker image with Jupyter notebook just run the same command mentioned before:
 ```
-docker run -it -p 8888:8888 -v /path_to_data:/data -v /path_to_notebooks:/notebooks lipcomputing/data_science_school_2019:<tag>
+docker run -it -p 8888:8888 lipcomputing/data_science_school_2019:<tag>
 ```
 
 [back](./)
