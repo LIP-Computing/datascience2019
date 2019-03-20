@@ -26,6 +26,7 @@ RUN apt-get update && \
       gfortran && \
     pip --no-cache-dir install glue && \
     pip --no-cache-dir install -U scikit-learn && \
-    pip install --user gwpy
+    pip install --user gwpy && \
+    mkdir -p /notebooks
 
 CMD ["/run_jupyter.sh", "--allow-root", "--notebook-dir=/notebooks"]
