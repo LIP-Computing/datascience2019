@@ -27,7 +27,7 @@ where "\<image name\>" is the file name.
 
 To load a previous saved image tar.gz file run:
 ```
-gzip < "<image name>.tar.gz" | docker load
+gzip -d < "<image name>.tar.gz" | docker load
 ```
 
 Then to start docker image with Jupyter notebook just run the same command mentioned before:
